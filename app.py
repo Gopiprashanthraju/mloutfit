@@ -6,10 +6,15 @@ from tensorflow.keras.models import load_model
 import joblib
 import tensorflow as tf
 import keras
-
+import os
 # pricetransform = pickle.load("transformprices.pkl")
-pricemodel = load_model("model.h5")
-ratingsmodel= load_model("model1.h5")
+script_dir = os.path.dirname(__file__)
+
+# Construct the full file path
+model_path = os.path.join(script_dir, "model.h5")
+pricemodel = load_model(model_path)
+model_path1 = os.path.join(script_dir, "model.h5")
+ratingsmodel= load_model(model_path1)
 meanp=2318.33610378
 sdp=1351.56659225
 meanr=3.89976697
